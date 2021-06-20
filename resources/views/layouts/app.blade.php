@@ -18,13 +18,13 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <link rel="stylesheet" href="assetsAdmin/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ asset('assetsAdmin/bootstrap/css/bootstrap.min.css')}}">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i">
-    <link rel="stylesheet" href="assetsAdmin/fonts/fontawesome-all.min.css">
+    <link rel="stylesheet" href="{{ asset('assetsAdmin/fonts/fontawesome-all.min.css')}}">
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+        <nav class="navbar navbar-expand-md navbar-dark bg-primary shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
                     {{ config('app.name', 'Laravel') }}
@@ -80,9 +80,9 @@
         <div id="wrapper">
             @guest
             @else
-        <nav class="navbar navbar-dark align-items-start sidebar sidebar-dark accordion bg-gradient-primary p-0">
+        <nav class="navbar navbar-dark align-items-start sidebar sidebar-dark accordion bg-primary p-0">
             <div class="container-fluid d-flex flex-column p-0">
-                <nav class="navbar navbar-dark align-items-start sidebar sidebar-dark accordion bg-gradient-primary p-0">
+                <nav class="navbar navbar-dark align-items-start sidebar sidebar-dark accordion bg-primary p-0">
                     <div class="container-fluid d-flex flex-column p-0"><a class="navbar-brand d-flex justify-content-center align-items-center sidebar-brand m-0" href="#">
                             <div class="sidebar-brand-icon rotate-n-15"><i class="fas fa-laugh-wink"></i></div>
                             <div class="sidebar-brand-text mx-3"><span>Himakom</span></div>
@@ -156,7 +156,8 @@
                     <div class="text-center my-auto copyright"><span>Copyright © Brand 2021</span></div>
                 </div>
             </footer>
-        </div><a class="border rounded d-inline scroll-to-top" href="#page-top"><i class="fas fa-angle-up"></i></a>
+        </div>
+        <a class="border rounded d-inline scroll-to-top" href="#page-top"><i class="fas fa-angle-up"></i></a>
     </div>
     </div>
 </body>
