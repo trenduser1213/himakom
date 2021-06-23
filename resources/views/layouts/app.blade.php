@@ -141,13 +141,17 @@
                 </nav>
             </div>
         </nav>
-        @endguest
+        @endguest 
         <div class="d-flex flex-column" id="content-wrapper">
             <div id="content">
                 <div class="container-fluid">
                     <h1 class="display-4 text-center mb-1">@yield('title')</h1>
                     <main class="py-4">
                         @yield('content')
+                        {{-- @guest
+                        @else
+                        @yield('isiAdmin')
+                        @endguest --}}
                     </main>
                 </div>
             </div>
@@ -160,5 +164,6 @@
         <a class="border rounded d-inline scroll-to-top" href="#page-top"><i class="fas fa-angle-up"></i></a>
     </div>
     </div>
+    @include('sweetalert::alert')
 </body>
 </html>

@@ -30,14 +30,7 @@
                         <td>{{ $datas->updated_at->diffForHumans()}}</td>
                         <td>{{ $datas->created_at->diffForHumans() }}</td>
                         <td><a href="{{ Route('article.edit',['article' => $datas->id])}}" class="btn btn-warning"><i class="fa fa-cog"></i> Edit</a></td>
-                        <td><a href="{{ Route('article.delete',['article' => $datas->id])}}" class="btn btn-danger"><i class="fa fa-trash"></i> delete</a></td>
-                        {{-- <td>
-                            <form action="{{ Route('article',['article' => $datas->id])}}}" method="post">
-                                @csrf
-                                @method(delete)
-                                <button class="btn btn-danger"><i class="fa fa-trash"></i> Delete</button>
-                            </form>
-                        </td> --}}
+                        <td><a onclick="myFunction()" href="{{ Route('article.delete',['article' => $datas->id])}}" class="btn btn-danger"><i class="fa fa-trash"></i> delete</a></td>
                         @empty
                         <h3>article kosong</h3>
                         @endforelse
@@ -49,3 +42,16 @@
     </div>
 </div>
 @endsection
+<script>
+    function myFunction() {
+      alert(Swal.fire({
+        title: 'Are you sure?',
+        text: "You won't be able to revert this!",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Yes, delete it!'
+        }));
+    }
+    </script>

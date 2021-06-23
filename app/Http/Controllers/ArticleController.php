@@ -35,7 +35,7 @@ class ArticleController extends Controller
             'image' => $fileimage,
             'descripsi' => $request->descripsi
         ]);
-        return redirect()->route('article.index');
+        return redirect()->route('article.index')->with('success', 'Task Created Successfully!');
     }
 
     public function show(Article $article)
@@ -65,7 +65,7 @@ class ArticleController extends Controller
             'image' => $fileimage,
             'descripsi' => $request->descripsi
         ]);
-        return redirect()->route('article.index');
+        return redirect()->route('article.index')->with('success', 'update Successfully!');
     }
 
     public function destroy($article)
@@ -73,6 +73,6 @@ class ArticleController extends Controller
         $data=Article::find($article);
         $data->delete();
 
-        return redirect()->route('article.index');
+        return redirect()->route('article.index')->with('success', 'delete Successfully!');
     }
 }
